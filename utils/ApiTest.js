@@ -1,14 +1,9 @@
 import axios from 'axios'
 import ENV from '../config/envConfig'
 
-let TakeMeToUseApi = 'i want api'
 const createInstance = () => {
   return axios.create({
-    baseURL: ENV.TestApii,
-    headers: {
-      'Authorization': `Bearer ${TakeMeToUseApi}`,
-      'Content-Type': 'application/json'
-    }
+    baseURL: ENV.JokeApi
   })
 }
 
