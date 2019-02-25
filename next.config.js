@@ -6,7 +6,7 @@ require('dotenv').config()
 const evnconfig = {
   useFileSystemPublicRoutes: true,
   publicRuntimeConfig: {
-    TestApi: process.env.TestApi
+    JokeApi: process.env.JokeApi
   },
   serverRuntimeConfig: {
     JWT_SECRET: process.env.JWT_SECRET,
