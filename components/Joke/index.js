@@ -25,10 +25,20 @@ class index extends Component {
 })
   }
   handleJoke=async (method)=>{
-   let res = await jokeService.getJokebyId(this.state.user.id,this.state.user)
-    this.setState({
-      jokes:res.data.value
-    })
+   let res;
+   if(method.target.value==="id"){
+     res = await jokeService.getJokebyId(this.state.user.id,this.state.user)
+      this.setState({
+        jokes:res.data.value
+      })
+   }
+   else if(method.target.value==="random"){
+     res = await jokeService.getRandomJoke(this.state.user)
+      this.setState({
+        jokes:res.data.value
+      })
+   }
+    
   }
   render () {
     return (

@@ -77,7 +77,9 @@ class joke extends Component {
 
               </form>
               <div className="row">
-                <Button onClick={() => this.props.handleJoke()}>Joke!</Button>
+                <Button value="id" onClick={(value) => this.props.handleJoke(value)}>Joke!</Button>
+                  
+                <Button value="random" onClick={(value) => this.props.handleJoke(value)}>Random Joke!</Button>
               </div>
               <div className='row'>
                 {this.props.jokes.joke}
