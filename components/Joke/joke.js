@@ -6,7 +6,14 @@ import {
   Button,
   Select as AntDesignSelect
 } from 'antd'
+import styled from 'styled-components'
 const FormItem = Form.Item
+const Option = AntDesignSelect.Option
+const ButtonsModi = styled(Button)`
+`
+const CardModi = styled(Card)`
+width:30em;
+`
 
 class joke extends Component {
   render () {
@@ -15,7 +22,7 @@ class joke extends Component {
         <div className="row">
           <div className="col-4"></div>
           <div className="col-4">
-            <Card className='mt-5'>
+            <CardModi className='mt-5'>
               <form>
                 <div className=" container-fluid">
                   <div className="row">
@@ -39,7 +46,7 @@ class joke extends Component {
                   <div className="row">
                     <div className="col-6">
                       <FormItem>
-                LastName :
+                        LastName :
                       </FormItem>
                     </div>
                     <div className="col-6">
@@ -57,8 +64,9 @@ class joke extends Component {
                   <div className="row">
                     <div className="col-6">
                       <FormItem>
-                JokeId :
+                        JokeId :
                       </FormItem>
+
                     </div>
                     <div className="col-6">
                       <FormItem>
@@ -70,21 +78,42 @@ class joke extends Component {
                           name="id"
                           value={this.props.user.id}
                         />
+                        <ButtonsModi value="id" onClick={(value) => this.props.handleJoke(value)}>Joke!</ButtonsModi>
+                      </FormItem>
+                    </div>
+                  </div>
+                  <div className= "row mb-3">
+                    <div className="col-6">
+                      <FormItem>
+                      Randoms alot jokes :
+                      </FormItem>
+                    </div>
+                    <div className="col-6">
+                      <FormItem>
+                        <AntDesignSelect
+                          name="num"
+                          showSearch
+                          placeholder="Randoms alot jokes"
+                          onChange={this.props.handleNum}>
+                          <Option name="num" value="2">2</Option>
+                          <Option name="num" value="4">4</Option>
+                          <Option name="num" value="6">6</Option>
+                        </AntDesignSelect>
+
                       </FormItem>
                     </div>
                   </div>
                 </div>
-
               </form>
               <div className="row">
-                <Button value="id" onClick={(value) => this.props.handleJoke(value)}>Joke!</Button>
-                  
-                <Button value="random" onClick={(value) => this.props.handleJoke(value)}>Random Joke!</Button>
+                <ButtonsModi value="random" onClick={(value) => this.props.handleJoke(value)}>Random Joke!</ButtonsModi>
               </div>
-              <div className='row'>
-                {this.props.jokes.joke}
+              <div className='row mt-3'>
+                { this.props.jokes.map(data => {
+                  return <p>{data.joke}<br/>-----------------------</p>
+                })}
               </div>
-            </Card>
+            </CardModi>
           </div>
           <div className="col-4"></div>
         </div>
