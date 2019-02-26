@@ -15,6 +15,8 @@ Code must be written in Javascript language. The code will be tested with Node8,
 ```
 Answer:
 ```
+*You can also see result in page /array*
+
  shift = (arg,method,num)=>{
     if(method==='left'){
          for (let index = 0; index < num; index++) {
@@ -39,7 +41,53 @@ Answer:
 
 Answer:
 ```
--- insert your answer here
+*You can also see result in page /hero*
+
+2.1 networthAvgs = ()=>{
+let avg=0;
+ Heros.map(data=>{
+   avg+=data.networth
+ })
+ avg/=Heros.length
+return avg.toFixed(2)
+}
+-------------------------------
+2.2 heroAttributeAvgs=(att)=>{
+  let avg=0;
+  Heros.map(data=>{
+    if(data.primary_attribute===att)
+    avg+=data.level
+  })
+  avg/=Heros.length
+ return avg.toFixed(2)
+}
+-------------------------------
+2.3 findAssist(){
+    let bestAssit={
+    name:'No one',
+    assist:0
+    }
+    Heros.map(data=>{
+    if (data.assist > bestAssit.assist) {
+      bestAssit.name=data.name
+      bestAssit.assist=data.assist
+    }
+})
+return bestAssit.name
+}
+2.4 findwrostRatio(){
+    let wrostRatio={
+        name:'No one',
+        ratio:Infinity
+     }
+    Heros.map(data=>{
+      if (data.ratio < wrostRatio.ratio) {
+        wrostRatio.name=data.name
+        wrostRatio.ratio=data.ratio
+      }
+  })
+  return wrostRatio.name
+}
 ```
 
 ## Simple Web Application: A joke from Chuck Norris.
@@ -62,16 +110,28 @@ This part of the quest will be a challenging one. You are going to make a simple
 ## Questions
 Q1: What is GraphQL and how it is different from REST API?
 
-A1: <insert your answer here>
+A1: <
+GraphQL ช่วยลดจำนวน APIs endpoint ลงไป ช่วยทำให้ผู้ใช้งานสะดวกยิ่งขึ้น ช่วยลดข้อมูลที่ไม่จำเป็นได้แต่ว่าเพิ่มเรื่องของการ query ที่ซับซ้อนขึ้นมา
+ส่วน
+REST API จะออกแนว static นิดๆไม่ค่อยยืดหยุ่นเหมือน GraphQL แต่ว่าส่วนตัวรู้สึกว่าง่ายต่อการใช้งาน แต่จะเหนื่อยเรื่องของการทำ API ผมเคยทำ microservice แล้วใช้หลาย APIs endpoint มากแล้วคนเขียนไม่ได้เขียนมีแค่คนเดียวมันจะตีกันนิดๆถ้าไม่มีเขียนอธิบายว่า Api ตัวนี้ไว้ใช้ทำอะไรก็จะไม่รู้เลย
+/>
 
 
 Q2: Please explain how javascript benefits from cross-platform development
 
-A2: <insert your answer here>
+A2: 
+<
+-ประหยัดเรื่องเวลาช่วยลดเรื่องของการที่ต้องมาเขียนโค้ดหรือทำความเข้าใจภาษาใหม่. -ความยุ่งยากในเรื่องข้องมานั่งดูโค้ดภาษาที่ไม่เหมือนกันเวลาเกิดข้อผิดพลาด.         -สามารถนำโค้ดมาปรับใช้ในอีก platform ได้เลย
+-หน้าตาของ ux/ui จะออกมาเหมือนกันเพราะว่าออกมาจากภาษาเดียวกัน 
+/>
 
 Q3: What do you expect to get during an internship at TakeMeTour?
 
-A3: <insert your answer here>
+A3: 
+<
+คาดหวังประสบการณ์การทำงานจริงที่หาไม่ได้จากในมหาลัย และหวังว่าจะได้ passion ใหม่ๆ ความท้าทายใหม่ๆที่น่าสนใจครับ
+ถ้าได้มาทำงานที่นี่ อยากพัฒนา skill ทั่งสองฝั่งหน้าบ้านและหลังบ้าน(Full Stack) พัฒนาความสามารถตัวเองไปให้ไกลกว่านี้และที่น่าสนใจจากคำถามข้อที่ 1 เป็นไปได้อยากลองทำเกี่ยวกับ GraphQL เพราะยังไม่เคยลองจริงๆเลยครับ
+/>
 
 ## Submitting
 
