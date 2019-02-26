@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import ShowHero from './ShowHero'
 import Heros from './../../hero.json'
 import colors from './../../config/colors'
+import Footer from '../Core/Footer';
 const BG = styled.div`
 background:${colors.bgcolor};
 `
@@ -78,6 +79,7 @@ findwrostRatio(){
         findAssist={this.findAssist}
         findwrostRatio={this.findwrostRatio}
         ></ShowHero>
+        <Footer/>
         </BG>
       </Fragment>
     )

@@ -18,10 +18,13 @@ const Header = styled.h1`
 text-align:center;
 color:${props => props.colors.primary};
 `
+const Div = styled.div`
+  height:38.5em;
+`
 class joke extends Component {
   render () {
     return (
-      <div className=" container-fluid">
+      <Div className=" container-fluid">
         <Header colors={this.props.colors}>Get Jokes From Chuck Norris Api</Header>
         <div className="row">
           <div className="col-4"></div>
@@ -121,7 +124,7 @@ class joke extends Component {
           </div>
           <div className="col-4"></div>
         </div>
-      </div>
+      </Div>
     )
   }
 }

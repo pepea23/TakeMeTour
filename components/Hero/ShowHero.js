@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-
-import { Table, Divider, Tag } from 'antd'
+import styled from 'styled-components'
+import { Table } from 'antd'
 
 const columns = [{
   title: 'Name',
@@ -37,18 +37,23 @@ const columns = [{
   key: 'primary_attribute',
   dataIndex: 'primary_attribute'
 }]
+const Div = styled.div`
+  height:38.5em;
+`
 
 class ShowHero extends Component {
   render () {
     return (
       <div>
-        <Table columns={columns} dataSource={this.props.hero} />
-        <div>All Networth avgs : {this.props.networthAvgs()}</div>
-        <div>All Primary_attribute Interligent avgs : {this.props.heroAttributeAvgs('intelligent')}</div>
-        <div>All Primary_attribute Agility avgs : {this.props.heroAttributeAvgs('agility')}</div>
-        <div>All Primary_attribute Strength avgs : {this.props.heroAttributeAvgs('strength')}</div>
-        <div>Most Assist Hero : {this.props.findAssist()}</div>
-        <div>Wrost ratio Hero : {this.props.findwrostRatio()}</div>
+        <Div className="mb-5">
+          <Table columns={columns} dataSource={this.props.hero} />
+          <div>All Networth avgs : {this.props.networthAvgs()}</div>
+          <div>All Primary_attribute Interligent avgs : {this.props.heroAttributeAvgs('intelligent')}</div>
+          <div>All Primary_attribute Agility avgs : {this.props.heroAttributeAvgs('agility')}</div>
+          <div>All Primary_attribute Strength avgs : {this.props.heroAttributeAvgs('strength')}</div>
+          <div>Most Assist Hero : {this.props.findAssist()}</div>
+          <div>Wrost ratio Hero : {this.props.findwrostRatio()}</div>
+        </Div>
       </div>
     )
   }

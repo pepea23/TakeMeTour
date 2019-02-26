@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Joke from './joke'
 import jokeService from './../../service/JokeService'
 import colors from './../../config/colors'
+import Footer from '../Core/Footer'
+
 const BG = styled.div`
 background:${colors.bgcolor};
 `
@@ -75,7 +77,9 @@ class index extends Component {
         jokes= {this.state.jokes}
         handleField={this.handleField}
         handleNum={this.handleNum}
-        handleJoke={this.handleJoke}/>
+        handleJoke={this.handleJoke}>
+        </Joke>
+        <Footer/>
         </BG>
     )
   }
