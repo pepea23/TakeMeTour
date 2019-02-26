@@ -15,7 +15,21 @@ Code must be written in Javascript language. The code will be tested with Node8,
 ```
 Answer:
 ```
--- insert your answer here
+ shift = (arg,method,num)=>{
+    if(method==='left'){
+         for (let index = 0; index < num; index++) {
+            let temp = arg.shift()
+             arg.push(temp)
+        }
+    }else if(method ==='right'){
+        for (let index = 0; index < num; index++) {
+            let temp = arg.pop()
+            arg.unshift(temp)
+        }
+    }
+    console.log(arg)
+  }
+
 ```
 2. Download [hero.json](https://github.com/takemetour/job-quest-intern-2019/blob/master/hero.json) and write a code to calculate these values from **hero.json**
 - 2.1 Average **networth** of all heroes
