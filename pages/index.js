@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import App from './../components/Core/App'
-import colors  from '../config/colors'
+import colors from '../config/colors'
 
 const BgColors = styled.div`
   background: ${colors.bgcolor};
@@ -9,6 +9,7 @@ const BgColors = styled.div`
     height: 100%;
   }
 `
+
 class componentName extends React.Component {
   render () {
     return (
