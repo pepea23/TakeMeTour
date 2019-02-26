@@ -1,6 +1,11 @@
-import React, { Fragment, Component } from 'react'
+import React, {  Component } from 'react'
+import styled from 'styled-components'
 import Joke from './joke'
 import jokeService from './../../service/JokeService'
+import colors from './../../config/colors'
+const BG = styled.div`
+background:${colors.bgcolor};
+`
 class index extends Component {
 
   state = {
@@ -63,14 +68,15 @@ class index extends Component {
   }
   render () {
     return (
-      <Fragment>
-        <Joke 
+        <BG>
+        <Joke
+        colors ={colors} 
         user ={this.state.user}
         jokes= {this.state.jokes}
-         handleField={this.handleField}
-         handleNum={this.handleNum}
-          handleJoke={this.handleJoke}/>
-      </Fragment>
+        handleField={this.handleField}
+        handleNum={this.handleNum}
+        handleJoke={this.handleJoke}/>
+        </BG>
     )
   }
 }

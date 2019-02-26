@@ -1,7 +1,11 @@
 import React, { Fragment, Component } from 'react'
+import styled from 'styled-components'
 import ShowHero from './ShowHero'
 import Heros from './../../hero.json'
-
+import colors from './../../config/colors'
+const BG = styled.div`
+background:${colors.bgcolor};
+`
 class index extends Component {
   componentDidMount () {
   Heros.map(data =>{
@@ -66,6 +70,7 @@ findwrostRatio(){
   render () {
     return (
       <Fragment>
+        <BG>
         <ShowHero 
         hero={this.state.heros} 
         networthAvgs={this.networthAvgs}
@@ -73,6 +78,7 @@ findwrostRatio(){
         findAssist={this.findAssist}
         findwrostRatio={this.findwrostRatio}
         ></ShowHero>
+        </BG>
       </Fragment>
     )
   }

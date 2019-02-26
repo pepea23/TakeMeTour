@@ -14,11 +14,15 @@ const ButtonsModi = styled(Button)`
 const CardModi = styled(Card)`
 width:30em;
 `
-
+const Header = styled.h1`
+text-align:center;
+color:${props => props.colors.primary};
+`
 class joke extends Component {
   render () {
     return (
       <div className=" container-fluid">
+        <Header colors={this.props.colors}>Get Jokes From Chuck Norris Api</Header>
         <div className="row">
           <div className="col-4"></div>
           <div className="col-4">
